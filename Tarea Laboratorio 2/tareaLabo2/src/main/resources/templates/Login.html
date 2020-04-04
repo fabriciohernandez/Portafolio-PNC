@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Login</h1>
+	<form action="#"th:action="@{/validacion}"th:object="${usuario}"method="post">
+		<p>
+			Usuario: <input type="text"th:field="*{usuario}">
+		</p>
+		<p>
+			Contrasenia: <input type="password"th:field="*{contrasena}">
+		</p>
+		<p>
+			<input type="submit"value="Enviar"/> <input type="reset"value="Borrar"/>
+			
+		</p>
+	</form>
+</body>
+</html>
