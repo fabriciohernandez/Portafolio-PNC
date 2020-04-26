@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo alumno</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="jumbotron">
+  <h1 class="display-3">¡Nuevo alumno!</h1> 
+  <form method="POST" th:action="@{/parametros}">
+  	<div class="form-group">
+      <label for="nombres">Nombres</label>
+      <input type="text" class="form-control" id="nombres" name="nombres" required placeholder="Nombres">
+    </div>
+    <div class="form-group">
+      <label for="nombres">Apellidos</label>
+      <input type="text" class="form-control" id="Apellidos" name="apellidos" required placeholder="Apellidos">
+    </div>
+    <div class="form-group">
+      <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+      <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required placeholder="Fecha de Nacimiento">
+    </div>
+    <div class="form-group">
+      <label for="lugar_nacimiento">Lugar de Nacimiento</label>
+      <input type="text" class="form-control" id="lugar_nacimiento" name="lugar_nacimiento" required placeholder="Lugar de Nacimiento">
+    </div>
+    <div class="form-group">
+      <label for="colegio">Instituto o colegio de procedencia</label>
+      <input type="text" class="form-control" id="colegio" name="colegio" required placeholder="Instituto o colegio de procedencia">
+    </div>
+    <div class="form-group">
+      <label for="telefono_fijo">Telefono Fijo</label>
+      <input type="number" class="form-control" id="telefono_fijo" name="telefono_fijo" required placeholder="Telefono Fijo">
+    </div>
+    <div class="form-group">
+      <label for="telefono_movil">Telefono Movil</label>
+      <input type="number" class="form-control" id="telefono_movil" name="telefono_movil" required placeholder="Telefono Movil">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar Alumno</button>
+  
+  </form>
+  
+</div>
+    
+</body>
+</html>
