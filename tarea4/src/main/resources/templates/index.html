@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo alumno</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="jumbotron">
+  <h1 class="display-3">¡Nuevo producto!</h1> 
+  <form method="POST" th:action="@{/parametros}" th:object="${producto}">
+  	<div class="form-group">
+      <label for="codigo">Código</label>
+      <input th:field="*{codigo}" type="text" class="form-control" id="codigo" name="codigo" placeholder="Codigo">
+      <span th:errors="*{codigo}" style="color: #FF0000"></span>
+    </div>
+    <div class="form-group">
+      <label for="nombre">Nombre Producto</label>
+      <input th:field="*{nombreProducto}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+      <span th:errors="*{nombreProducto}" style="color: #FF0000"></span>
+    </div>
+    <div class="form-group">
+      <label for="marca">Marca</label>
+      <input th:field="*{marca}" type="text" class="form-control" id="marca" name="marca" placeholder="Marca">
+      <span th:errors="*{marca}" style="color: #FF0000"></span>
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripcion</label>
+      <input th:field="*{descripcion}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion">
+      <span th:errors="*{descripcion}" style="color: #FF0000"></span>
+    </div>
+    <div class="form-group">
+      <label for="existencias">Existencias</label>
+      <input th:field="*{existencias}" type="text" class="form-control" id="existencias" name="existencias" placeholder="Existencias">
+      <span th:errors="*{existencias}" style="color: #FF0000"></span>
+    </div>
+    <div class="form-group">
+      <label for="ingreso">Fecha de Ingreso</label>
+      <input th:field="*{fechaDeIngreso}" type="text" class="form-control" id="ingreso" name="ingreso"  placeholder="Fecha de Ingreso">
+      <span th:errors="*{fechaDeIngreso}" style="color: #FF0000"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar Producto</button>
+  
+  </form>
+  
+</div>
+    
+</body>
+</html>
