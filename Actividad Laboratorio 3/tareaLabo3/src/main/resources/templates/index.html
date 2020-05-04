@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>Inicio</title>
 </head>
 <body>
 <h1>Estudiante</h1>
+<br>
 
 <form action="@{/formData}" th:object="${student}" method="post">
 	<label>Nombre:</label><input type="text" th:field=*{nombre}><br>
@@ -17,9 +18,5 @@
 
 	<input type="submit" value="Enviar">
 </form>
-
-
-
-
 </body>
 </html>
