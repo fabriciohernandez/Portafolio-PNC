@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo alumno</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="jumbotron">
+  <h1 class="display-3">¡Comprar Porducto!</h1> 
+  <form method="POST" th:action="@{/validar}" th:object="${product}">
+  
+  	<div class="form-group">
+  		<label for="juego">Seleccione un juego</label>
+	    <th><select id="juego" class="custom-select" th:field="*{id}">
+	      <option 
+	      	th:each="p : ${producto}" 
+		      th:value="${p.id}" 
+		      th:text="${p.nombre}">
+	      </option>
+	    </select></th>
+  	</div>
+  	
+  	<div class="form-group">
+      <label for="cantidad">Cantidad</label>
+      <input type="number" class="form-control" id="cantidad" placeholder="0" th:field="*{cantidad}">
+    </div>
+ 
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  
+  </form>
+  
+</div>
+    
+</body>
+</html>

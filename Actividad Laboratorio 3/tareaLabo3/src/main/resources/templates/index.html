@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inicio</title>
+</head>
+<body>
+<h1>Estudiante</h1>
+
+<form action="@{/formData}" th:object="${student}" method="post">
+	<label>Nombre:</label><input type="text" th:field=*{nombre}><br>
+	<label>Apellido:</label><input type="text" th:field=*{apellido}><br>
+	<label>Fecha de Entrada:</label><input type="date" th:field=*{fechaEntrada}><br>
+	<label>Carrera:</label><input type="text" th:field=*{carrera}><br>
+	<label>Activo:</label><input type="radio" th:field=*{estado} th:value="${true}">
+	<label>Inactivo:</label><input type="radio" th:field=*{estado} th:value="${false}">
+
+	<input type="submit" value="Enviar">
+</form>
+
+
+
+
+</body>
+</html>
