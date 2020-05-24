@@ -1,0 +1,56 @@
+La base de datos la he llamado "practico"
+
+les adjunté el bk pero paso los scripts por si acaso.
+
+-- Database: practico
+
+-- DROP DATABASE practico;
+
+CREATE DATABASE practico
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Latin America.1252'
+    LC_CTYPE = 'Spanish_Latin America.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+-- Table: public.importancia
+
+-- DROP TABLE public.importancia;
+
+CREATE TABLE public.importancia
+(
+    c_importancia integer NOT NULL DEFAULT nextval('importancia_c_importancia_seq'::regclass),
+    s_importancia character varying(30) COLLATE pg_catalog."default",
+    CONSTRAINT importancia_pkey PRIMARY KEY (c_importancia)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.importancia
+    OWNER to postgres;
+
+-- Table: public.contribuyente
+
+-- DROP TABLE public.contribuyente;
+
+CREATE TABLE public.contribuyente
+(
+    c_contribuyente integer NOT NULL DEFAULT nextval('contribuyente_c_contribuyente_seq'::regclass),
+    s_nombre character varying(30) COLLATE pg_catalog."default",
+    s_apellido character varying(30) COLLATE pg_catalog."default",
+    s_nit character varying(14) COLLATE pg_catalog."default",
+    f_fecha_ingreso date,
+    c_importancia integer,
+    CONSTRAINT contribuyente_pkey PRIMARY KEY (c_contribuyente),
+    CONSTRAINT contribuyente_c_importancia_fkey FOREIGN KEY (c_importancia)
+        REFERENCES public.importancia (c_importancia) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.contribuyente
+    OWNER to postgres;
