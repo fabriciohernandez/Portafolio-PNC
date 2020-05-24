@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Nuevo Contribuyente</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="alert alert-dismissible alert-secondary" >
+		<br>
+		<h1>Datos Generales</h1>
+		 <hr class="my-4">
+		<form method="post" th:action="@{/formContribuyente}" th:object="${contribuyente}">
+			<div class="form-group">
+      			<label for="importancia">Importancia</label>
+			      <select class="form-control" id="importancia" th:field="*{c_importancia}">
+			        <option th:each="importancia : ${importancias}" th:value= ${#numbers.formatInteger(importancia.c_importancia,3)}  th:text="${importancia.s_importancia}">
+			        </option>
+			      </select>
+    		</div>
+			<div class="form-group">
+		      <label for="nombre">Nombre</label>
+		      <input type="text" th:field="*{s_nombre}" class="form-control" id="nombre" placeholder="Nombre del contribuyente">
+		      <span th:errors = "*{s_nombre}" style="color: #E81505"></span>
+    		</div>
+    		
+    		<div class="form-group">
+		      <label for="apellido">Apellido</label>
+		      <input type="text" th:field="*{s_apellido}" class="form-control" id="apellido" placeholder="Apellido del contribuyente">
+		      <span th:errors = "*{s_apellido}" style="color: #E81505"></span>
+    		</div>
+    		
+    		<div class="form-group">
+		      <label for="nit">NIT</label>
+		      <input type="text" th:field="*{s_nit}" class="form-control" id="nit" placeholder="Nit del contribuyente">
+		      <span th:errors = "*{s_nit}" style="color: #E81505"></span>
+    		</div>
+			
+			<button type="submit" class="btn btn-outline-info">Guardar</button>
+			<a class="btn btn-outline-primary" href="/contribuyentes" role="button">Ver Contribuyentes</a>
+			
+		</form>
+		
+	</div>
+</body>
+</html>

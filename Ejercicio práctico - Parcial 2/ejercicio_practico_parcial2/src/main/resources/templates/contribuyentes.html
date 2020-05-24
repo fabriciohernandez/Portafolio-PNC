@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contribuyentes</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="jumbotron">
+  <h1>Contribuyentes registrados</h1>
+  <br>
+<table class="table table-hover ">
+  <thead class="table-info">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">NIT</th>
+      <th scope="col">Importancia</th>
+      <th scope="col">Fecha de Ingreso</th>
+    </tr>
+  </thead>
+  <th:block th:each="contribuyente, row:${contribuyentes}">
+			<tr class="table-primary">
+				<th th:text="${contribuyente.s_nombre}"/>
+				<th th:text="${contribuyente.s_apellido}"/>
+				<th th:text="${contribuyente.s_nit}"/>
+				<th th:text="${contribuyente.importanciaDelegate}"/>
+				<th th:text="${contribuyente.f_fecha_ingreso}"/>			
+			</tr>
+		</th:block>
+</table> 
+<a class="btn btn-outline-info" href="/" role="button">Regresar</a>
+</div>
+
+</body>
+</html>
