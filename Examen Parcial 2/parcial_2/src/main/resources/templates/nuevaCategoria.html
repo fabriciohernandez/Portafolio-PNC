@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Nueva Categoría</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="alert alert-dismissible alert-secondary" >
+		<br>
+		<h1>Nueva Categoría</h1>
+		 <hr class="my-4">
+		<form method="post" th:action="@{/formCategoria}" th:object="${categoria}">
+		
+			<div class="form-group">
+		      <label for="nombre">Nombre Categoría</label>
+		      <input type="text" th:field="*{s_categoria}" class="form-control" id="nombre" placeholder="Nombre de la categoría">
+		      <span th:errors = "*{s_categoria}" style="color: #E81505"></span>
+    		</div>
+    		
+    		
+			<button type="submit" class="btn btn-outline-primary">Guardar categoría</button>
+			<a class="btn btn-outline-info" href="/index" role="button">Regresar</a>
+			
+		</form>
+		
+		
+	</div>
+</body>
+</html>

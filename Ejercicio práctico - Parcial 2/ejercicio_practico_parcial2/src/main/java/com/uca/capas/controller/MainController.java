@@ -32,7 +32,7 @@ public class MainController {
 		ModelAndView mav = new ModelAndView();	
 		importancias = importanciaService.findAll();
 		
-		System.out.println(contribuyente.getFechaActualDelegate());
+		System.out.println(contribuyente.getFechaActualDelegate().toString());
 		
 		mav.addObject("contribuyente",contribuyente);
 		mav.addObject("importancias",importancias);
@@ -70,7 +70,7 @@ public class MainController {
 			}
 			
 		}
-		System.out.println(result.getFieldErrors());
+		//System.out.println(result.getFieldErrors());
 		List<Importancia> importancias = null;
 		importancias = importanciaService.findAll();
 		mav.addObject("importancias",importancias);

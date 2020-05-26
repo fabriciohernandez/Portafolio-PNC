@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Libros</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="jumbotron">
+  <h1>Libros registrados</h1>
+  <br>
+<table class="table table-hover ">
+  <thead class="table-info">
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Autor</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Categoría</th>
+      <th scope="col">Fecha de ingreso</th>
+    </tr>
+  </thead>
+  <th:block th:each="libro, row:${libros}">
+			<tr class="table-primary">
+				<th th:text="${libro.s_titulo}"/>
+				<th th:text="${libro.s_autor}"/>
+				<th th:text="${libro.s_isbn}"/>
+				<th th:text="${libro.categoriaDelegate}"/>
+				<th th:text="${libro.fechaFormated}"/>			
+			</tr>
+		</th:block>
+</table> 
+<a class="btn btn-outline-info" href="/index" role="button">Regresar</a>
+</div>
+
+</body>
+</html>

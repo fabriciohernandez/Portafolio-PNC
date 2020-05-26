@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bienvenido</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="alert alert-dismissible alert-secondary" >
+		<br>
+		<h1>¡Bienvenido!</h1>
+		<span th:text=${success_msg} style="color: #008000"></span>
+		 <hr class="my-4">
+		 <a class="btn btn-outline-primary" href="/nuevaCategoria" role="button">Ingresar Categoría</a>
+		 <a class="btn btn-outline-primary" href="/nuevoLibro" role="button">Ingresar Libro</a>
+		 <a class="btn btn-outline-info" href="/verLibros" role="button">Ver Libros</a>
+		
+	</div>
+</body>
+</html>
